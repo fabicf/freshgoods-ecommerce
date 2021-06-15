@@ -1,0 +1,55 @@
+@page
+@model FreshGoods.Pages.Admin.Orders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Tax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].FinalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Paid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order[0].Delivery)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Order) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Paid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Delivery)
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.Id">Perpare Order</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,85 @@
+@page
+@model FreshGoods.Pages.Admin.User.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ApplicationUser</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ApplicationUser.Address1" class="control-label"></label>
+                <input asp-for="ApplicationUser.Address1" class="form-control" />
+                <span asp-validation-for="ApplicationUser.Address1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationUser.Address2" class="control-label"></label>
+                <input asp-for="ApplicationUser.Address2" class="form-control" />
+                <span asp-validation-for="ApplicationUser.Address2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationUser.City" class="control-label"></label>
+                <input asp-for="ApplicationUser.City" class="form-control" />
+                <span asp-validation-for="ApplicationUser.City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationUser.Province" class="control-label"></label>
+                <input asp-for="ApplicationUser.Province" class="form-control" />
+                <span asp-validation-for="ApplicationUser.Province" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationUser.ZipCode" class="control-label"></label>
+                <input asp-for="ApplicationUser.ZipCode" class="form-control" />
+                <span asp-validation-for="ApplicationUser.ZipCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationUser.Email" class="control-label"></label>
+                <input asp-for="ApplicationUser.Email" class="form-control" />
+                <span asp-validation-for="ApplicationUser.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password1" class="control-label"></label>
+                <input type="password" asp-for="Password1" class="form-control" />
+                <span class="text-danger">@Model.PasswordWrong</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password2" class="control-label"></label>
+                <input type="password" asp-for="Password2" class="form-control" />
+                <span class="text-danger">@Model.PasswordMatch</span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label ">Roles</label>
+                <div>
+                    @Html.CheckBox("isUser")
+                    <label class="control-label d-inline ">User</label>
+                </div>
+                <div>
+                    @Html.CheckBox("isWorker")
+                    <label class="control-label d-inline">Worker</label>
+                </div>
+                <div>
+                    @Html.CheckBox("isAdmin")
+                    <label class="control-label d-inline">Admin</label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

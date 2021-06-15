@@ -1,0 +1,130 @@
+﻿
+@page 
+@model FreshGoods.Pages.OrderModel
+@{
+    ViewData["Title"] ="Order";
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Order</title>
+</head>
+<body onload="getTotal()">
+
+<div class="col-md-4">
+        <form method="post">
+            <h4>Order </h4>
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Order.Customer">User</label>
+                <input id="userName" asp-for="@Model.User.Identity.Name" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="CartTotal">Merchandise Total</label>
+                <input id="cartTotal" asp-for="@Model.CartTotal" class="form-control" />
+                <span asp-validation-for="CartTotal" class="text-danger"></span>
+            </div>
+            @if (@Model.distance)
+            {
+                <div class="form-group form-check">                
+                    <input onchange="valueChanged(); getTotal()" SupportRequired id="homeD" type="checkbox" name="HomeDelivery" asp-for="delivery" class="form-check-input" />
+                    <label asp-for="Order.Delivery" class="form-check-label" >Home Delivery</label> 
+                    <span asp-validation-for="Order.Delivery" class="text-danger"></span>
+                </div>
+                <div class="form-group" id="ZipCharge" AssistName>
+                    <label asp-for="DeliveryCharge"></label>
+                    <input id="DelCharge" onchange="getTotal()"  asp-for="DeliveryCharge" class="form-control" readonly/>
+                    <span asp-validation-for="DeliveryCharge" class="text-danger"></span>
+                </div>
+            }
+            
+
+            <div class="form-group">
+                <label asp-for="Order.TotalPrice">Sub-Total</label>
+                <input id="TotPrice" asp-for="Order.TotalPrice" class="form-control"readonly />
+                <span asp-validation-for="Order.TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.Tax"></label>
+                <input id="taxAmt" asp-for="Order.Tax" class="form-control" readonly />
+                <span asp-validation-for="Order.Tax" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order.FinalPrice"></label>
+                <input id="finalPrice" asp-for="Order.FinalPrice" class="form-control" readonly />
+                <!--<input id="finalPriceHidden" asp-for="Order.FinalPrice" class="form-control" hidden>-->
+                <span asp-validation-for="Order.FinalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardHolderName">Card Holder Name </label>
+                <input asp-for="CardHolderName" class="form-control" maxlength="50" />
+                <span asp-validation-for="CardHolderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardNo"></label>
+                <input type="number" asp-for="CardNo" class="form-control" minlength="16" maxlength="19"/>
+                <span asp-validation-for="CardNo" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="ExpYear"></label>
+                <input asp-for="ExpYear" class="form-control" maxlength="4" min="2020" max="2023"/>
+                <span asp-validation-for="ExpYear" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="ExpMonth"></label>
+                <input asp-for="ExpMonth" class="form-control" maxlength="2" min="1" max="12" />
+                <span asp-validation-for="ExpMonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CVV"></label>
+                <input  type="number" data-minlength-min="3" asp-for="CVV" class="form-control" minlength="3" maxlength="3" min="111" max="999"/>
+                <span asp-validation-for="CVV" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Order</button>
+        </form>
+    </div>
+
+
+     <script type="text/javascript">
+        function startup() {
+            valueChanged();
+            getTotal();
+        };
+                
+        function valueChanged(){
+                        
+            if($('#homeD').is(":checked")){
+                $('#ZipCharge').show();
+                $('#DelCharge').val("10");
+                getTotal();
+                //$('#TotPrice').val($('#cartTotal').val() + $('#DelCharge').val());    
+            }else{
+                $('#ZipCharge').hide();
+                $('#DelCharge').val(0);
+                getTotal();
+            }   
+        }
+
+        function getTotal(){
+            if($('#homeD').is(":checked")){
+               //$('#TotPrice').text = ((parseFloat($('#cartTotal').val()) + parseFloat($('#DelCharge').val())).toFixed(2));
+                let total = ((parseFloat($('#cartTotal').val()) + parseFloat($('#DelCharge').val())).toFixed(2));
+                $('#TotPrice').val(total);
+                $("#taxAmt").val((total*.14975).toFixed(2));
+               let finalPrice = ((parseFloat($('#TotPrice').val()) + parseFloat($('#taxAmt').val())).toFixed(2));
+                $('#finalPrice').val(finalPrice)
+                //$('#finalPriceHidden').val(finalPrice)
+            }else{
+                $('#TotPrice').val(parseFloat($('#cartTotal').val()).toFixed(2)); 
+                $("#taxAmt").val((parseFloat($('#cartTotal').val()).toFixed(2)*.14975).toFixed(2));
+                let finalPrice = ((parseFloat($('#TotPrice').val()) + parseFloat($('#taxAmt').val())).toFixed(2));
+                $('#finalPrice').val(finalPrice)
+                //$('#finalPriceHidden').val(finalPrice)
+            }
+        }
+    </script>
+</body>
+</html>

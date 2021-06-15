@@ -1,0 +1,100 @@
+﻿@page
+@model FreshGoods.Pages.CartModel
+@{
+    ViewData["Title"] = "My Cart";
+}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cart Item</title>
+    <style>
+        .item-qty {
+            width: 100px;
+            text-align: center;
+        }
+
+        .img-size {
+            width: 40%;
+        }
+
+        .cart-item-row {
+            border-bottom: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="text-center p-4 our-prod-title">My Cart</h2>
+    <form method="post" asp-page="cart" asp-page-handler="update">
+        <div class="row border border-success" >
+
+            <div class="col-md-1 font-weight-bold text-center">Id</div>
+            <div class="col-md-2 font-weight-bold text-center">Name</div>
+            <div class="col-md-2 font-weight-bold text-center">Photo</div>
+            <div class="col-md-1 font-weight-bold text-center">Price</div>
+            <div class="col-md-1 font-weight-bold text-center">Unit</div>
+            <div class="col-md-2 font-weight-bold text-center">Quantity <br><input type="submit" value="Update"
+                    class="btn btn-success" /></div>
+            <div class="col-md-1 font-weight-bold text-center">Action</div>
+            <div class="col-md-2 font-weight-bold text-center">Sub Total</div>
+        </div>
+        @foreach (var item in Model.cart)
+        {
+            <div class="row cart-item-row py-3 border border-success">
+                <div class="td-data col-md-1 align-self-center text-center">@item.Item.Id</div>
+                <div class="td-data col-md-2 align-self-center text-center">@item.Item.ItemName</div>
+                <div class="col-md-2 align-self-center text-center"><img src="~/images/@item.Item.ImagePath"
+                    style="width:8rem;" /></div>
+                <div class="td-data col-md-1 align-self-center text-center">$@item.Item.Price</div>
+                <div class="td-data col-md-1 align-self-center text-center">@item.Item.Unit</div>
+                <div class="col-md-2 align-self-center text-center"><input type="number" name="quantities"
+                    value="@item.CartQuantity" min="1" class="item-qty" />
+                </div>
+                <div class="td-data col-md-1 align-self-center text-center">
+                    <a asp-page="cart" asp-page-handler="delete" asp-route-id="@item.Item.Id"><i
+                        class="fas fa-trash-alt"></i></a>
+                </div>
+                <div class="td-data col-md-2 align-self-center text-center">
+                    $@(item.Item.Price * item.CartQuantity)
+                </div>
+            </div>
+        }
+    </form>
+    <div class="d-flex flex-row justify-content-end py-3">
+        <div>
+            <h6 class="mr-5">Total</h6>
+        </div>
+        <div class="mr-5">&nbsp;&nbsp;</div>
+        <div class="mr-5">
+            <h6>$@Model.Total</h6>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-between py-3">
+        <div><a asp-page="Category" class="btn btn-success"> <i class="fas fa-arrow-left"> </i> Continue Shopping</a>
+        </div>
+        <div>
+            @if (@Model.User.Identity.IsAuthenticated)
+            {
+                <a asp-page="Order" class="btn btn-success">Proceed to Payment <i class="fas fa-arrow-right"> </i></a>
+            }
+            else
+            {
+                <a asp-page="Account/Login" class="btn btn-success">Proceed to Payment <i class="fas fa-arrow-right">
+                    </i></a>
+            }
+        </div>
+    </div>
+    @* ------------ JS Bootstrap ------------- *@
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>

@@ -1,0 +1,293 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+/* ------------------------- Home Page CSS by Fabi ---------------------------------*/
+.main-content{
+  /* padding:2rem 5rem; */
+  background-color: #ffffff;
+}
+.row {
+  margin-right: 0 !important;;
+  margin-left: 0 !important;;
+}
+.services-title {
+margin-top: 4rem;
+margin-bottom: -4rem;
+text-align: center;
+}
+
+.carrousel-deals{    
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);    
+}
+
+.carousel-inner, .carrousel-deals{
+  border-radius: var(--radius);
+}
+.service-card {
+margin: 2rem 0;
+background: var(--clr-grey-10);
+border-radius: var(--radius);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+transition: var(--transition);
+}
+.service-card:hover {
+transform: scale(1.02);
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+:root {
+  --clr-primary: #678e3e;
+  --clr-primary-light: #beed8c;
+  --clr-grey-1: #102a42;
+  --clr-grey-5: #617d98;
+  --clr-grey-10: #f1f5f8;
+  --clr-white: #fff;
+  --ff-primary: "Catamaran", sans-serif;
+  --ff-secondary: "Grand Hotel", cursive;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+letter-spacing: var(--spacing);
+text-transform: capitalize;
+line-height: 1.25;
+margin-bottom: 0.75rem;
+}
+h1 {
+font-size: 3rem;
+}
+h2 {
+font-size: 2rem;
+}
+h3 {
+font-size: 1.5rem;
+}
+h4 {
+font-size: 0.875rem;
+}
+p {
+margin-bottom: 1.25rem;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+
+
+/* .btn {
+  text-transform: uppercase;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--spacing);
+  display: inline-block;
+  font-weight: 700;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  color: var(--clr-primary);
+  background: var(--clr-primary-light);
+} */
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* ================= */
+
+.service-img {
+/* height: 17rem; */
+object-fit: cover;
+border-top-left-radius: var(--radius);
+border-top-right-radius: var(--radius);
+}
+.service-info {
+text-align: center;
+padding: 3rem 1rem 2.5rem 1rem;
+}
+.service-info p {
+max-width: 20rem;
+color: var(--clr-grey-5);
+margin: 0 auto;
+}
+.service-btn {
+font-size: 0.75rem;
+text-transform: capitalize;
+padding: 0.375rem 0.5rem;
+border-radius: var(--radius);
+font-weight: 400;
+margin-top: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .service-card {
+    float: left;
+    width: 45%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .service-card {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .service-card {
+    width: 21%;
+  }
+}
+
+.service-img-container {
+position: relative;
+}
+.service-icon {
+position: absolute;
+left: 50%;
+bottom: 0;
+font-size: 1.2rem;
+color: var(--clr-primary);
+background: var(--clr-primary-light);
+padding: 0.25rem 0.6rem;
+border-radius: 50%;
+transform: translate(-50%, 50%);
+border: 0.375rem solid var(--clr-grey-10);
+}
+
+/* ------------------------- Home Page CSS by Fabi ---------------------------------*/
+
+/* Image size for item cart */
+.top-img{
+  height: 100px;
+  width: 120px;
+  border: 1px solid black;
+}
+
+.h5-carousel{
+  text-shadow: 2px 2px 10px #000000;
+}
+
+
+/* --------------------- Category page CSS by Fabi -------------------------------------- */
+.btn-outline-success{
+  width: 10rem;
+  height: 4rem;
+  padding-top: 1rem;
+}
+
+
+/* --------------------- Icons and Buttons CSS by Fabi -------------------------------------- */
+
+.fa-shopping-cart,
+.fa-lemon, .fa-trash-alt {
+  color: #5cb85c;
+  text-decoration: none;
+
+}
+
+.fa-shopping-cart:hover,
+.card-icon,
+.fa-lemon:hover,
+.fa-trash-alt:hover {
+  color: #218838;
+}
+
+.featured-title{
+  color: #218838;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.our-prod-title{
+  color: #218838;
+}
+
+/*----------------------Admin Interface by Kevin------------------------------------------------*/
+
+.UserCreateRole{
+  width: auto;
+  height: fit-content;
+}
+

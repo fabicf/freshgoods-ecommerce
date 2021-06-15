@@ -1,0 +1,12 @@
+﻿@page
+@model FreshGoods.Pages.Admin.IndexModel
+@{
+    ViewData["Title"] = "Admin Index";
+}
+    @if (@Model.User.Identity.IsAuthenticated&& @Model.User.IsInRole("Admin"))
+    {
+    <a class="btn btn-primary btn-block" href="\Admin\User">Admin User Interface</a>
+    <a class="btn btn-primary btn-block" href="\Admin\Promotions">Admin Promotion Interface</a>
+    <a class="btn btn-primary btn-block" href="\Admin\Items">Admin Item Interface</a>
+    }
+    <a class="btn btn-success btn-block" href="\Admin\Orders">Order Interface</a>

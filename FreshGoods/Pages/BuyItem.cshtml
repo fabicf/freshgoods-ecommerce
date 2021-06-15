@@ -1,0 +1,47 @@
+﻿@page
+@model FreshGoods.Pages.BuyItemModel
+@{
+    ViewData["Title"]="Add Product";
+}
+    
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width">
+        <tittle>Buy Items</tittle>
+        <style>
+            .td-data{
+                width:100px;
+                text-align:center;
+                align-item:center;
+            }
+            .img-size{
+                width:250px;
+                height: 130px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Product List</h3>
+        <table border="1">
+            <tr class="td-data">
+                <th>No</th>
+                <th>Item Name</th>
+                <th>Photo</th>
+                <th>Item Price</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var item in Model.Items)
+            {
+                <tr class="td-data">
+                    <td class="td-data">@item.Id</td>
+                    <td class="td-data">@item.ItemName</td>
+                    <td><img src="~/images/@item.ImagePath" class="img-size"></td>
+                    <td class="td-data">@item.Price</td>
+                    <td class="td-data">
+                        <a asp-page="cart" asp-page-handler="buynow" asp-route-id="@item.Id">Buy Now</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </body>
+</html>

@@ -1,0 +1,481 @@
+Daily Scrum
+========================================================
+03-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Work distribution for project.
+
+
+2. To do until next scrum:
+- Read about how to implement add to cart functionality in razor pages.
+- Read about Scafolding for add/edit functionality.
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+
+Fabiola
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+Create trello board and user stories
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+
+***************************
+
+Kevin
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+========================================================
+04-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Worked with add to cart functionality with seed data.
+
+2. To do until next scrum:
+- Working on add to cart.
+- Need to figure out how to implement ths functionality from database data.
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+
+Fabiola
+
+1. Done or not since the last scrum:
+Create trello board
+Start to think in which part of project works
+
+2. To do until next scrum:
+To Think and draft design of home page and products list page
+Create structure of razor pages in the project
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+
+***************************
+
+Kevin
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+Start work on the Admin page
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+========================================================
+05-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Worked with Item add page for add to cart functionality. 
+
+2. To do until next scrum:
+- Working with uploading image in asp.net core razor pages.
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+
+Fabiola
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+
+***************************
+
+Kevin
+
+1. Done or not since the last scrum:
+started work on admin page
+
+2. To do until next scrum:
+Look into Scafolding
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+========================================================
+07-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Worked with how to implement login and register form with additional field in register.
+
+2. To do until next scrum:
+- Need to change in Add to cart page for Qty change.
+- Need to work with uploading image.
+- Working with login register pages.
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+
+**************************
+
+Fabiola
+
+1. Done or not since the last scrum:
+- Worked on Home page design
+
+2. To do until next scrum:
+- Implement the home page in the project
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+
+***************************
+
+Kevin
+
+1. Done or not since the last scrum:
+research Scaffolding
+
+2. To do until next scrum:
+Implement scaffolding and edit page to desire
+
+3. Need assistance with/figure things out:
+No assistance needed
+========================================================
+08-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Read about extended Identity user for additional fields in Register page.
+
+2. To do until next scrum:
+- Need to work with register page
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+Fabiola
+
+1. Done or not since the last scrum:
+- Create Structure of razor pages
+- Create Data folder, Models folder and Models
+
+
+2. To do until next scrum:
+- 
+
+3. Need assistance with/figure things out:
+No assistance needed
+***************************
+Kevin
+
+1. Done or not since the last scrum:
+Implement scaffolding and edit page to desire for Items and promotions
+
+2. To do until next scrum:
+work on Implementing scaffolding for User and to create the roles as well
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+========================================================
+09-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Implement login and register page in main project 
+	with Identity User and Extended Identity User
+
+2. To do until next scrum:
+- Working with Add to cart item in main project with database data
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+Fabiola
+
+1. Done or not since the last scrum:
+- Fix glitch with bootstrap file 
+- Implement Home page 
+
+2. To do until next scrum:
+- Start work on Categories Page
+
+3. Need assistance with/figure things out:
+No assistance needed
+***************************
+Kevin
+
+1. Done or not since the last scrum:
+work on Implementing scaffolding for User and to create the roles as well
+
+2. To do until next scrum:
+work on implementing the List of orders
+
+3. Need assistance with/figure things out:
+No assistance needed
+========================================================
+10-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- implement add item list in main project with database data.
+
+2. To do until next scrum:
+- Need to read about payment gateway implementation
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+Fabiola
+
+1. Done or not since the last scrum:
+- WIP on categories Page
+- Add navbar features
+
+2. To do until next scrum:
+-Work on categories page
+
+
+3. Need assistance with/figure things out:
+No assistance needed
+***************************
+Kevin
+
+1. Done or not since the last scrum:
+work on implementing the List of orders
+
+2. To do until next scrum:
+finish working on the list of orders
+
+3. Need assistance with/figure things out:
+No assistance needed
+========================================================
+11-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Worked with implementation of stripe payment gateway 
+
+2. To do until next scrum:
+- Need to work with payment gateway
+- Need to work with session object to pass amount from cart page to checkout page.
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+Fabiola
+
+1. Done or not since the last scrum:
+- Implement Category page design and functionalities
+
+2. To do until next scrum:
+- Fix Navbar implementation
+
+3. Need assistance with/figure things out:
+No assistance needed
+***************************
+Kevin
+
+1. Done or not since the last scrum:
+working on implementing User Edit
+
+2. To do until next scrum:
+Work on list of Orders
+
+3. Need assistance with/figure things out:
+look into direction API for checking distance.
+
+
+
+========================================================
+12-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Worked with Order Page for saving data in order table
+
+2. To do until next scrum:
+- Need to work with order page for storing data in order detail table.
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+Fabiola
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+
+
+3. Need assistance with/figure things out:
+No assistance needed
+***************************
+Kevin
+
+1. Done or not since the last scrum:
+Finish order part of admin
+2. To do until next scrum:
+put direction api information in application
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+
+
+========================================================
+13-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Worked with Order page for storing data in both table.
+
+2. To do until next scrum:
+- Need to ckeck order page for Save data in Order and order detail table 
+- and payment data show on stripe
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+Fabiola
+
+1. Done or not since the last scrum:
+- Fix slug in categories page
+
+2. To do until next scrum:
+- Figure out slug in navbar
+
+3. Need assistance with/figure things out:
+No assistance needed
+***************************
+Kevin
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+
+
+========================================================
+14-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+- Worked with Order page ,there was a problem with final amount 
+
+2. To do until next scrum:
+- Order success page didn't show up on order save
+- Testing for Order page
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+Fabiola
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+
+
+3. Need assistance with/figure things out:
+No assistance needed
+***************************
+Kevin
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+
+
+========================================================
+15-06-21
+
+Jagruti
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+
+
+3. Need assistance with/figure things out:
+No assistance needed
+
+**************************
+Fabiola
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+
+
+3. Need assistance with/figure things out:
+No assistance needed
+***************************
+Kevin
+
+1. Done or not since the last scrum:
+
+
+2. To do until next scrum:
+
+
+3. Need assistance with/figure things out:
+No assistance needed

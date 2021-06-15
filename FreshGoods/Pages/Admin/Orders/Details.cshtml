@@ -1,0 +1,55 @@
+@page
+@model FreshGoods.Pages.Admin.Orders.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@if (@Model.Order.Delivery)
+{
+    <h1>
+        Prepare Order For Delivery
+    </h1>
+}else{
+    <h1>
+        Prepare Order For Pickup
+    </h1>
+}
+
+<div>
+    <h4>Order# @Model.Order.Id</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Product Id
+        </dt>
+        <dt class="col-sm-6">
+            Product Name
+        </dt>
+        <dt class="col-sm-4">
+            Amount
+        </dt>
+        @foreach (var detail in Model.OrderDetails)
+        {
+        <dd class="col-sm-2">
+            @Html.DisplayFor(modelItem => detail.Item.Id)
+        </dd>
+        <dd class="col-sm-6">
+            @Html.DisplayFor(modelItem => detail.Item.ItemName)
+        </dd>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(modelItem => detail.Quantity)
+        </dd>
+        }
+        
+    </dl>
+</div>
+<form method="post">
+    <div class="form-group">
+        <input type="hidden" asp-for="Order.Id"/>
+        <input type="submit" value="Order Perpared" class="btn btn-primary"/>
+    </div>
+</form>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>

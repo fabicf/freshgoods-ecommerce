@@ -1,0 +1,83 @@
+﻿@page "{slug?}"
+@model FreshGoods.Pages.CategoryModel
+@{
+    ViewData["Title"] = "Product Category";
+}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+<body>
+    <div class="main-content">
+
+        <div>
+            <h2 class="text-center p-4 our-prod-title">Our Products</h2>
+        </div>
+
+        <!----------------------- start category buttons -------------------------->
+        <div class="d-flex flex-row justify-content-between">
+            <a asp-page="/Category" asp-route-slug="" class="@((Model.Slug==null) ? "btn btn-outline-success active" : "btn btn-outline-success")">View All</a>
+            @foreach (var category in Model.ItemCategories)
+            {
+                <a asp-page="/Category" asp-route-slug="@category.Slug" class="@(Model.Slug == @category.Slug ? "btn btn-outline-success active" : "btn btn-outline-success")">@category.CategoryName</a>
+                
+            }
+        </div>
+        <!----------------------- end category buttons -------------------------->
+
+        <!----------------------- start random cards -------------------------->
+        <section class="services ">
+
+            <div class="section-center d-flex justify-content-between row">
+                <!-- single card 1 -->
+                @foreach (var item in Model.Items)
+                {
+                    <div class="service-card">
+                        <div class="service-img-container">
+                            <img src="~/Images/@item.ImagePath" class="service-img" alt="single service" />
+                            <span class="service-icon">
+                                @if (@item.CategoryId == 1)
+                                {
+                                    <i class="fas fa-lemon card-icon"></i>
+                                }
+                                @if (@item.CategoryId == 2)
+                                {
+                                    <i class="fas fa-drumstick-bite card-icon"></i>
+                                }
+                                @if (@item.CategoryId == 3)
+                                {
+                                    <i class="fas fa-carrot card-icon"></i>
+                                }
+                                @if (@item.CategoryId == 4)
+                                {
+                                    <i class="fas fa-bread-slice card-icon"></i>
+                                }
+                            </span>
+                        </div>
+                        <div class="service-info">
+                            <h5>@item.ItemName </h5>
+                            <p>
+                                $ @item.Price <span>@item.Unit</span>
+                            </p>
+                            <div class="col-auto mt-3">
+                                <a class="btn btn-success" asp-page="cart" asp-page-handler="buynow"
+                                asp-route-id="@item.Id">Buy Item</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+        @* <!----------------------- end of random cards --------------------------> *@
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+
+</body>
